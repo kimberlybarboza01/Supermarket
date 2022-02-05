@@ -10,19 +10,38 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 public class Rate_Supermarket extends AppCompatActivity {
+    private Supermarket currentSupermarket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rate_supermarket);
-        initDoneButton ();
-        initSaveButton ();
+        initDoneButton();
+        initSaveButton();
+        currentSupermarket = new Supermarket();
     }
-    public void initDoneButton (){
+
+    public void initDoneButton() {
         Button doneBtn = findViewById(R.id.buttonDone);
         doneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boolean wasSuccessful;
+                MarketDataSource ds = new MarketDataSource(Rate_Supermarket.this);
+                try {
+                    ds.open();
+                    if (currentSupermarket.getSupermarketID()==-1){
+                        wasSuccessful = ds.insertSupermarket(currentSupermarket);
+                    }
+                    else {
+                        wasSuccessful = ds.updateSupermarket(currentSupermarket);
+                    }
+                    ds.close();
+                }
+                catch (Exception e){
+                    wasSuccessful = false;
+                }
+
                 Intent intent = new Intent(Rate_Supermarket.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -30,7 +49,7 @@ public class Rate_Supermarket extends AppCompatActivity {
         });
     }
 
-    public void initSaveButton (){
+    public void initSaveButton() {
         Button saveBtn = findViewById(R.id.buttonSave);
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_rate_sm.xml" value="0.25905797101449274" />
         <entry key="app/src/main/res/layout/activity_rate_supermarket.xml" value="0.37726449275362317" />
       </map>
     </option>
