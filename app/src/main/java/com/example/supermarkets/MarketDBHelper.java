@@ -20,7 +20,7 @@ public class MarketDBHelper extends SQLiteOpenHelper {
                 + "produce text, "
                 + "meal text, "
                 + "cheese text, "
-                + "Easeofcheckout text);";
+                + "Easeofcheckout text );";
 
     public MarketDBHelper (Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

@@ -3,9 +3,6 @@
     <string name="suoermarket_name">Suoermarket Name</string>
     <string name="rate">Rate</string>
     <string name="supermarket_address">Supermarket Address</string>
-    <string name="enter_name">enter name</string>
-    <string name="enter_address">enter address</string>
-    <string name="supermarket_name">Supermarket Name</string>
     <!-- Strings related to login -->
     <string name="title_activity_rate_sm">RateSm</string>
     <string name="prompt_email">Email</string>
@@ -16,4 +13,11 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="supermarket_name">Supermarket Name</string>
+    <string name="address">Address</string>
+    <string name="enter_address">enter address</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="zipcode">Zipcode</string>
+    <string name="enter_name">enter name</string>
 </resources>
